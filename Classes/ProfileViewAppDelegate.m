@@ -10,8 +10,7 @@
 
 @implementation ProfileViewAppDelegate
 
-@synthesize window, viewController;
-
+@synthesize window, navController;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -19,9 +18,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after application launch.
-	viewController = [[ProfileViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    UINavigationController *navController = [[UINavigationController alloc] init];
+	ProfileViewController *viewController = [[ProfileViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    navController = [[UINavigationController alloc] init];
 	[navController pushViewController:viewController animated:NO];
+	[viewController release];
+
 	[window addSubview:navController.view];
 	
     [self.window makeKeyAndVisible];
@@ -79,7 +80,7 @@
 
 
 - (void)dealloc {
-	[viewController release];
+	[navController release];
     [window release];
     [super dealloc];
 }

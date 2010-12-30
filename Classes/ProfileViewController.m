@@ -36,7 +36,7 @@
 
 	ProfileHeader *profileHeader = [[ProfileHeader alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
 	profileHeader.name.text = @"Candice";
-	profileHeader.imageView.image =[[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"imageURL"]]];
+	profileHeader.imageView.image =[[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"IMAGEURL"]]];
 	self.tableView.tableHeaderView = profileHeader;
 	[profileHeader release];
 	

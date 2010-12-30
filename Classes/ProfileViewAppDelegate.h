@@ -12,11 +12,12 @@
 
 @interface ProfileViewAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
-	ProfileViewController *viewController;
+	UINavigationController *navController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) ProfileViewController *viewController;
+@property (nonatomic, retain) UINavigationController *navController;
+
 
 @end
 

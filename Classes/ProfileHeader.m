@@ -22,11 +22,11 @@
 
 		imageView	= [[UIImageView alloc] initWithFrame:CGRectMake(20, 15, frame.size.height-20, frame.size.height-20)];
 		imageView.backgroundColor = [UIColor whiteColor];
+		imageView.contentMode =UIViewContentModeScaleAspectFill;
 		//imageView.layer.cornerRadius = 10;
 		imageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
 		imageView.layer.borderWidth = 1;
-		//imageView.layer.masksToBounds = YES;
-		//imageView.image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://playfoursquare.s3.amazonaws.com/userpix_thumbs/FQYZMP4PYIZXKOCY.jpg"]]];
+		imageView.layer.masksToBounds = YES;
 		[self addSubview:imageView];
 		
 		name = [[UILabel alloc] initWithFrame:CGRectMake(20+imageView.frameX+imageView.frameWidth, imageView.frameY, 320-(30+imageView.frameX+imageView.frameWidth), imageView.frameWidth)];
@@ -54,6 +54,8 @@
 }
 
 - (void)dealloc {
+	[imageView release];
+	[name release];
     [super dealloc];
 }
 
